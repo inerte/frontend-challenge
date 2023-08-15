@@ -1,16 +1,19 @@
 import React, { Component } from "react";
+import { AppProvider } from "./state";
+import { Router, Route } from "wouter";
 
-const App = () => {
-  return (
-    <div>
-      <header>
-        <h1>Welcome to Upgrade challenge</h1>
-      </header>
-      <p>
-        To get started, edit <code>src/App.jsx</code> and save to reload.
-      </p>
-    </div>
-  );
-};
+import Confirmation from "./Confirmation";
+import MoreInfo from "./MoreInfo";
+import Root from "./Root";
+
+const App = () => (
+  <AppProvider>
+    <Router>
+      <Route path="/" component={Root} />
+      <Route path="/more-info" component={MoreInfo} />
+      <Route path="/confirmation" component={Confirmation} />
+    </Router>
+  </AppProvider>
+);
 
 export default App;
