@@ -1,10 +1,10 @@
 import React from "react";
 import useSWR from "swr";
 import { useForm } from "react-hook-form";
-import { useAppState } from "./state";
 import { navigate } from "wouter/use-location";
+import { useAppState } from "./state";
 
-const MoreInfo = () => {
+function MoreInfo() {
   const [state, setState] = useAppState();
   const { handleSubmit, register } = useForm({ defaultValues: state });
 
@@ -26,27 +26,34 @@ const MoreInfo = () => {
 
       <form onSubmit={handleSubmit(saveData)}>
         <div className="field">
-          <label className="label">Favorite color</label>
           <div className="control">
-            <div className="select">
-              <select name="color" {...register("color")}>
-                <option value="">Select your favorite color</option>
-                {data &&
-                  data.map((color) => (
-                    <option key={color} value={color}>
-                      {color}
-                    </option>
-                  ))}
-              </select>
+            <div className="select" id="color">
+              <label className="label" htmlFor="color">
+                Favorite color
+                <select name="color" {...register("color")}>
+                  <option value="">Select your favorite color</option>
+                  {data &&
+                    data.map((color) => (
+                      <option key={color} value={color}>
+                        {color}
+                      </option>
+                    ))}
+                </select>
+              </label>
             </div>
           </div>
         </div>
 
         <div className="field">
           <div className="control">
-            <label className="checkbox">
-              <input type="checkbox" name="terms" {...register("terms")} />I
-              agree to <a href="#">terms and conditions</a>
+            <label className="checkbox" htmlFor="terms">
+              <input
+                type="checkbox"
+                name="terms"
+                id="terms"
+                {...register("terms")}
+              />
+              I agree to <a href="#">terms and conditions</a>
             </label>
           </div>
         </div>
@@ -62,12 +69,14 @@ const MoreInfo = () => {
             </button>
           </div>
           <div className="control">
-            <button className="button is-link">Next</button>
+            <button className="button is-link" type="submit">
+              Next
+            </button>
           </div>
         </div>
       </form>
     </div>
   );
-};
+}
 
 export default MoreInfo;

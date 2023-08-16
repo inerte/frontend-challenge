@@ -3,14 +3,13 @@ import React from "react";
 import { navigate } from "wouter/use-location";
 import { useAppState } from "./state";
 
-const Root = () => {
+function Root() {
   const [state, setState] = useAppState();
 
-  const {
-    handleSubmit,
-    register,
-    formState: { errors },
-  } = useForm({ defaultValues: state, mode: "onSubmit" });
+  const { handleSubmit, register } = useForm({
+    defaultValues: state,
+    mode: "onSubmit",
+  });
 
   const saveData = (data) => {
     setState({ ...state, ...data });
@@ -18,14 +17,14 @@ const Root = () => {
   };
 
   return (
-    <>
-      <div className="container">
-        <h1 className="title is-1">Sign up</h1>
+    <div className="container">
+      <h1 className="title is-1">Sign up</h1>
 
-        <form onSubmit={handleSubmit(saveData)}>
-          <div className="field">
-            <label className="label">First name</label>
-            <div className="control">
+      <form onSubmit={handleSubmit(saveData)}>
+        <div className="field">
+          <div className="control">
+            <label className="label" htmlFor="name">
+              First name
               <input
                 className="input"
                 type="text"
@@ -34,49 +33,52 @@ const Root = () => {
                 placeholder="First name"
                 required
               />
-            </div>
+            </label>
           </div>
+        </div>
 
-          <div className="field">
-            <label className="label">Email</label>
-            <div className="control has-icons-left has-icons-right">
+        <div className="field">
+          <div className="control">
+            <label className="label" htmlFor="email">
+              Email
               <input
                 className="input"
                 type="email"
                 {...register("email")}
                 name="email"
+                id="email"
                 placeholder="Email input"
                 required
               />
-              <span className="icon is-small is-left">
-                <i className="fas fa-envelope"></i>
-              </span>
-            </div>
+            </label>
           </div>
+        </div>
 
-          <div className="field">
-            <label className="label">Password</label>
-            <div className="control">
+        <div className="field">
+          <div className="control">
+            <label className="label" htmlFor="password">
+              Password
               <input
                 className="input"
                 type="password"
                 {...register("password")}
                 name="password"
+                id="password"
                 placeholder="Password"
                 required
               />
-            </div>
+            </label>
           </div>
+        </div>
 
-          <div className="control">
-            <button className="button is-link" type="submit">
-              Next
-            </button>
-          </div>
-        </form>
-      </div>
-    </>
+        <div className="control">
+          <button className="button is-link" type="submit">
+            Next
+          </button>
+        </div>
+      </form>
+    </div>
   );
-};
+}
 
 export default Root;

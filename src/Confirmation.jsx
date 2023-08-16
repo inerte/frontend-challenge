@@ -1,9 +1,9 @@
 import React from "react";
-import { useAppState } from "./state";
 import { useForm } from "react-hook-form";
 import { navigate } from "wouter/use-location";
+import { useAppState } from "./state";
 
-const Confirmation = () => {
+function Confirmation() {
   const [state] = useAppState();
   const { handleSubmit } = useForm({ defaultValues: state });
 
@@ -42,12 +42,14 @@ const Confirmation = () => {
             </button>
           </div>
           <div className="control">
-            <button className="button is-link">Submit</button>
+            <button className="button is-link" type="submit">
+              Submit
+            </button>
           </div>
         </div>
       </form>
     </>
   );
-};
+}
 
 export default Confirmation;

@@ -9,3 +9,5 @@ For a CSS framework I chose [Bulma](https://bulma.io/) because I could just incl
 To fetch data I basically took the simplest library listed here https://react.dev/reference/react/useEffect#what-are-good-alternatives-to-data-fetching-in-effects
 
 I've added eslint with the default Airbnb config, and prettier to format the code.
+
+I turned off the `react/jsx-props-no-spreading` rule since React Hook Form uses the spread operator as the preferred way with `register` to pass props to the component.
