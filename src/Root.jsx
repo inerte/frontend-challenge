@@ -9,10 +9,8 @@ const Root = () => {
   const {
     handleSubmit,
     register,
-    watch,
     formState: { errors },
   } = useForm({ defaultValues: state, mode: "onSubmit" });
-
 
   const saveData = (data) => {
     setState({ ...state, ...data });
