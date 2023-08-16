@@ -1,4 +1,4 @@
-import React, { useEffect } from "react";
+import React from "react";
 import useSWR from "swr";
 import { useForm } from "react-hook-form";
 import { navigate } from "wouter/use-location";
@@ -11,7 +11,7 @@ function MoreInfo() {
 
   const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  const { data, error, isLoading } = useSWR(
+  const { data: colorOptions, isLoading } = useSWR(
     "http://localhost:3001/api/colors",
     fetcher,
   );
@@ -37,8 +37,8 @@ function MoreInfo() {
             <div className={selectClassName}>
               <select name="color" id="color" {...register("color")}>
                 <option value="">Select your favorite color</option>
-                {data &&
-                  data.map((color) => (
+                {colorOptions &&
+                  colorOptions.map((color) => (
                     <option key={color} value={color}>
                       {color}
                     </option>
@@ -56,8 +56,11 @@ function MoreInfo() {
                 name="terms"
                 id="terms"
                 {...register("terms")}
-              />
-              I agree to <a href="#">terms and conditions</a>
+              />{" "}
+              I agree to{" "}
+              <a href="https://www.upgrade.com/funnel/borrower-documents/TERMS_OF_USE">
+                terms and conditions
+              </a>
             </label>
           </div>
         </div>

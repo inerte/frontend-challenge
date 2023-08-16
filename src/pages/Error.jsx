@@ -3,24 +3,22 @@ import { navigate } from "wouter/use-location";
 
 function Success() {
   return (
-    <>
-      <div className="container">
-        <h1 className="title is-1">Error</h1>
+    <div className="container">
+      <h1 className="title is-1">Error</h1>
 
-        <p className="content">
-          <span className="has-text-danger">&#9447; </span>
-          Uh oh, something went wrong. Please try again later.
-        </p>
+      <p className="content">
+        <span className="has-text-danger">&#9447; </span>
+        Uh oh, something went wrong. Please try again later.
+      </p>
 
-        <button
-          type="button"
-          className="button is-primary"
-          onClick={() => navigate("/")}
-        >
-          Restart
-        </button>
-      </div>
-    </>
+      <button
+        type="button"
+        className="button is-primary"
+        onClick={() => navigate("/")}
+      >
+        Restart
+      </button>
+    </div>
   );
 }
 
