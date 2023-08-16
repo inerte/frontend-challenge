@@ -47,7 +47,7 @@ const MoreInfo = () => {
 
         <div className="field is-grouped">
           <div className="control">
-            <button className="button is-link is-light">Back</button>
+            <button type="button" className="button is-link is-light" onClick={() => navigate("/")}>Back</button>
           </div>
           <div className="control">
             <button className="button is-link">Next</button>
