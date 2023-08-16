@@ -8,9 +8,12 @@ const MoreInfo = () => {
   const [state, setState] = useAppState();
   const { handleSubmit, register } = useForm({ defaultValues: state });
 
-  const fetcher = (...args) => fetch(...args).then(res => res.json());
+  const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-  const { data, error, isLoading } = useSWR('http://localhost:3001/api/colors', fetcher);
+  const { data, error, isLoading } = useSWR(
+    "http://localhost:3001/api/colors",
+    fetcher,
+  );
 
   const saveData = (data) => {
     setState({ ...state, ...data });
@@ -28,9 +31,12 @@ const MoreInfo = () => {
             <div className="select">
               <select name="color" {...register("color")}>
                 <option value="">Select your favorite color</option>
-                {data && data.map((color) => (
-                  <option key={color} value={color}>{color}</option>
-                ))}
+                {data &&
+                  data.map((color) => (
+                    <option key={color} value={color}>
+                      {color}
+                    </option>
+                  ))}
               </select>
             </div>
           </div>
@@ -39,15 +45,21 @@ const MoreInfo = () => {
         <div className="field">
           <div className="control">
             <label className="checkbox">
-              <input type="checkbox" name="terms" {...register("terms")} />
-              I agree to <a href="#">terms and conditions</a>
+              <input type="checkbox" name="terms" {...register("terms")} />I
+              agree to <a href="#">terms and conditions</a>
             </label>
           </div>
         </div>
 
         <div className="field is-grouped">
           <div className="control">
-            <button type="button" className="button is-link is-light" onClick={() => navigate("/")}>Back</button>
+            <button
+              type="button"
+              className="button is-link is-light"
+              onClick={() => navigate("/")}
+            >
+              Back
+            </button>
           </div>
           <div className="control">
             <button className="button is-link">Next</button>

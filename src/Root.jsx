@@ -28,18 +28,28 @@ const Root = () => {
           <div className="field">
             <label className="label">First name</label>
             <div className="control">
-              <input className="input" type="text"
+              <input
+                className="input"
+                type="text"
                 {...register("name")}
-              name="name" placeholder="First name" required={true} />
+                name="name"
+                placeholder="First name"
+                required={true}
+              />
             </div>
           </div>
 
           <div className="field">
             <label className="label">Email</label>
             <div className="control has-icons-left has-icons-right">
-              <input className="input" type="email"
+              <input
+                className="input"
+                type="email"
                 {...register("email")}
-                name="email" placeholder="Email input" required={true} />
+                name="email"
+                placeholder="Email input"
+                required={true}
+              />
               <span className="icon is-small is-left">
                 <i className="fas fa-envelope"></i>
               </span>
@@ -49,9 +59,14 @@ const Root = () => {
           <div className="field">
             <label className="label">Password</label>
             <div className="control">
-              <input className="input" type="password"
+              <input
+                className="input"
+                type="password"
                 {...register("password")}
-                name="password" placeholder="Password" required={true} />
+                name="password"
+                placeholder="Password"
+                required={true}
+              />
             </div>
           </div>
 

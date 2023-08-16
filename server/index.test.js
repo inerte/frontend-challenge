@@ -9,7 +9,7 @@ it("returns colors", async () => {
   const response = await request(app).get("/api/colors");
 
   expect(response.headers["content-type"]).toEqual(
-    expect.stringContaining("json")
+    expect.stringContaining("json"),
   );
   expect(response.statusCode).toBe(200);
   expect(response.body).toEqual(["black", "blue", "green", "red", "white"]);

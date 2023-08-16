@@ -11,7 +11,7 @@ const Confirmation = () => {
     console.info(data);
   };
 
-  console.log('state', state);
+  console.log("state", state);
 
   return (
     <>
@@ -24,13 +24,22 @@ const Confirmation = () => {
         <li>Email: {state.email}</li>
         <li>Password: {"*".repeat(state.password.length)}</li>
         <li>Favorite color: {state.favoriteColor}</li>
-        <li>Terms and conditions: {state.termsAndConditions ? "Agreed" : "Not agreed"}</li>
+        <li>
+          Terms and conditions:{" "}
+          {state.termsAndConditions ? "Agreed" : "Not agreed"}
+        </li>
       </ul>
 
       <form onSubmit={handleSubmit(submitData)}>
         <div className="field is-grouped">
           <div className="control">
-            <button type="button" className="button is-link is-light" onClick={() => navigate("/more-info")}>Back</button>
+            <button
+              type="button"
+              className="button is-link is-light"
+              onClick={() => navigate("/more-info")}
+            >
+              Back
+            </button>
           </div>
           <div className="control">
             <button className="button is-link">Submit</button>
