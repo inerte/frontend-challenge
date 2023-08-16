@@ -62,7 +62,7 @@ function Confirmation() {
               <span className="has-text-weight-semibold">
                 Terms and conditions:
               </span>
-              {state.termsAndConditions ? "Agreed" : "Not agreed"}
+              {state.terms ? "Agreed" : "Not agreed"}
             </li>
           </ul>
 
