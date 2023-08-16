@@ -38,14 +38,26 @@ function Confirmation() {
       <section className="section">
         <div className="content">
           <ul>
-            <li>First name: {state.name}</li>
-            <li>Email: {state.email}</li>
             <li>
-              Password: {"*".repeat(state.password && state.password.length)}
+              <span className="has-text-weight-semibold">First name:</span>{" "}
+              {state.name}
             </li>
-            <li>Favorite color: {state.favoriteColor}</li>
             <li>
-              Terms and conditions:{" "}
+              <span className="has-text-weight-semibold">Email:</span>{" "}
+              {state.email}
+            </li>
+            <li>
+              <span className="has-text-weight-semibold">Password:</span>{" "}
+              {"*".repeat(state.password && state.password.length)}
+            </li>
+            <li>
+              <span className="has-text-weight-semibold">Favorite color:</span>{" "}
+              {state.color}
+            </li>
+            <li>
+              <span className="has-text-weight-semibold">
+                Terms and conditions:
+              </span>
               {state.termsAndConditions ? "Agreed" : "Not agreed"}
             </li>
           </ul>
