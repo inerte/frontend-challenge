@@ -1,3 +1,12 @@
+## Instructions
+
+1. Clone this repo
+2. Run `npm ci`
+3. Run `npm start`
+4. Open http://localhost:3000
+
+## Train of thought while working on this project
+
 After some quick research reaffirming my initial idea, landed on using [React Hook Form](https://react-hook-form.com/). It's widely used, and is feature complete.
 
 For routing I went the other way and decided for a lightweight solution, [Wouter](https://github.com/molefrog/wouter). The reasons are that what it offers is enough for this project. The trade-off is eventually if the project needs more features from well know heavy hitter like React Router, it might require a migration, although this pain in minimized by the fact that the API is very similar.
