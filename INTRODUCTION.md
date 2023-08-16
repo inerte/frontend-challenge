@@ -18,3 +18,5 @@ TODO (good ideas but not enough time):
 
 - Return to the first page if loading subsequent pages without data
 - The `{"select" + (isLoading ? " is-loading" : "")}` is hack-ish, should use something like classnames
+
+PS: I hope I am not judged by the commits atomicity :) Some of them are pretty large - in reality I would make smaller and more atomic commits, and bundle them with smaller Pull Requests, but I was pressed for time and just getting the basics of the app up and running in big chunks.
