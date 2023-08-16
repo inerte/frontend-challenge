@@ -29,6 +29,10 @@ function Confirmation() {
     });
   };
 
+  const buttonClassName = `button is-link ${
+    isSubmittingState ? " is-loading" : ""
+  }`;
+
   return (
     <>
       <div className="container">
@@ -74,12 +78,7 @@ function Confirmation() {
                 </button>
               </div>
               <div className="control">
-                <button
-                  className={
-                    "button is-link" + (isSubmittingState ? " is-loading" : "")
-                  }
-                  type="submit"
-                >
+                <button className={buttonClassName} type="submit">
                   Submit
                 </button>
               </div>

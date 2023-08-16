@@ -21,6 +21,8 @@ function MoreInfo() {
     navigate("/confirmation");
   };
 
+  const selectClassName = `select ${isLoading ? "is-loading" : ""}`;
+
   return (
     <div className="container">
       <h1 className="title is-1">Additional Info</h1>
@@ -32,7 +34,7 @@ function MoreInfo() {
             <label className="label" htmlFor="color">
               Favorite color
             </label>
-            <div className={"select" + (isLoading ? " is-loading" : "")}>
+            <div className={selectClassName}>
               <select name="color" id="color" {...register("color")}>
                 <option value="">Select your favorite color</option>
                 {data &&
