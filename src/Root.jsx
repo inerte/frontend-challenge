@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
-import React, { Component } from "react";
-import { useAppState } from "./state";
+import React from "react";
 import { navigate } from "wouter/use-location";
+import { useAppState } from "./state";
 
 const Root = () => {
   const [state, setState] = useAppState();
@@ -32,7 +32,7 @@ const Root = () => {
                 {...register("name")}
                 name="name"
                 placeholder="First name"
-                required={true}
+                required
               />
             </div>
           </div>
@@ -46,7 +46,7 @@ const Root = () => {
                 {...register("email")}
                 name="email"
                 placeholder="Email input"
-                required={true}
+                required
               />
               <span className="icon is-small is-left">
                 <i className="fas fa-envelope"></i>
@@ -63,13 +63,15 @@ const Root = () => {
                 {...register("password")}
                 name="password"
                 placeholder="Password"
-                required={true}
+                required
               />
             </div>
           </div>
 
           <div className="control">
-            <button className="button is-link">Next</button>
+            <button className="button is-link" type="submit">
+              Next
+            </button>
           </div>
         </form>
       </div>
