@@ -25,5 +25,8 @@ TODO (good ideas but not enough time):
 - More accessibility
 - An e2e test that the back button keep form data
 - Maybe store data in LocalStorage for persistence between sessions?
+- Use something like https://www.npmjs.com/package/yup for validation. Didn't go this route because truly the only validation mentioned was the email value, and for that there's the email input type. I would have used it if there were more validation rules, and when we added server-side validation (which is a must for any real world app)
+
+If I had plenty of time and more freedom, I would most definitely have used TypeScript, and probably [Remix](https://remix.run/), which would have simplified form state management, and would have allowed me to use the same code for the server and the client.
 
 PS: I hope I am not judged by the commits atomicity :) Some of them are pretty large - in reality I would make smaller and more atomic commits, and bundle them with smaller Pull Requests, but I was pressed for time and just getting the basics of the app up and running in big chunks.
