@@ -29,8 +29,8 @@ const Root = () => {
             <label className="label">First name</label>
             <div className="control">
               <input className="input" type="text"
-                {...register("first-name")}
-              name="first-name" placeholder="First name" required={true} />
+                {...register("name")}
+              name="name" placeholder="First name" required={true} />
             </div>
           </div>
 

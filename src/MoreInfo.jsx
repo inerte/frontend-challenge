@@ -26,7 +26,7 @@ const MoreInfo = () => {
           <label className="label">Favorite color</label>
           <div className="control">
             <div className="select">
-              <select {...register("favorite-color")}>
+              <select name="color" {...register("color")}>
                 <option value="">Select your favorite color</option>
                 {data && data.map((color) => (
                   <option key={color} value={color}>{color}</option>
@@ -39,7 +39,7 @@ const MoreInfo = () => {
         <div className="field">
           <div className="control">
             <label className="checkbox">
-              <input type="checkbox" name="agree-to-terms" {...register("agree-to-terms")} />
+              <input type="checkbox" name="terms" {...register("terms")} />
               I agree to <a href="#">terms and conditions</a>
             </label>
           </div>
