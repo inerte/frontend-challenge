@@ -11,3 +11,10 @@ To fetch data I basically took the simplest library listed here https://react.de
 I've added eslint with the default Airbnb config, and prettier to format the code.
 
 I turned off the `react/jsx-props-no-spreading` rule since React Hook Form uses the spread operator as the preferred way with `register` to pass props to the component.
+
+While reading the SWR documentation I came across https://swr.vercel.app/docs/prefetching so I added the `preload` link to index.html, which speeds up loading the colors on the more-info page. If you feel like that's cheating, please remove it. I also added a loading indicator to colors, so you see that in action.
+
+TODO (good ideas but not enough time):
+
+- Return to the first page if loading subsequent pages without data
+- The `{"select" + (isLoading ? " is-loading" : "")}` is hack-ish, should use something like classnames

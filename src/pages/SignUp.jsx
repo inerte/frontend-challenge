@@ -1,7 +1,7 @@
 import { useForm } from "react-hook-form";
 import React from "react";
 import { navigate } from "wouter/use-location";
-import { useAppState } from "./state";
+import { useAppState } from "../state";
 
 function Root() {
   const [state, setState] = useAppState();
