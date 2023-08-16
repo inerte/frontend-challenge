@@ -30,9 +30,9 @@ In terms of this challenge my biggest deviation from the requirements might have
 TODO (good ideas but not enough time):
 
 - Return to the first page if loading subsequent pages without data
-- The `selectClassName` is hack-ish, should use something like classnames
+- The `selectClassName` is hack-ish, should use something like [classnames](https://github.com/JedWatson/classnames)
 - More accessibility
-- An e2e test that the back button keep form data
+- An e2e test verifying back buttons keep form data
 - Maybe store data in LocalStorage for persistence between sessions?
 - Use something like https://www.npmjs.com/package/yup for validation. Didn't go this route because truly the only validation mentioned was the email value, and for that there's the email input type. I would have used it if there were more validation rules, and when we added server-side validation (which is a must for any real world app)
 
